@@ -8,7 +8,7 @@
  *
  * Return: nothing (void)
  */
-int	putnumber(int num)
+void	putnumber(int num)
 {
 	putchar(num / 10 + 48);
 	putchar(num % 10 + 48);
