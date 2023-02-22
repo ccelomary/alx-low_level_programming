@@ -10,13 +10,9 @@ int		main(void)
 
 	a = 16;
 	b = 20;
-	c = 22;
+	c = 17;
 
 	largest = largest_number(a, b, c);
-	printf("%d\n", largest);
-	largest = largest_number(b, a, c);
-	printf("%d\n", largest);
-	largest = largest_number(c, b, c);
 	printf("%d\n", largest);
 	return (0);
 }
