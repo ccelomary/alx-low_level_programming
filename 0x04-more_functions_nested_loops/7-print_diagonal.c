@@ -17,7 +17,7 @@ void	print_diagonal(int n)
 	while (row < n)
 	{
 		col = 0;
-		while (col <= row)
+		while (col < row)
 		{
 			_putchar(' ');
 			col++;
