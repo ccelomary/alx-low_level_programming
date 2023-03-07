@@ -11,10 +11,10 @@ void	print_chessboard(char (*a)[8])
 	int	col;
 
 	row = 0;
-	while (row < 8)
+	while (row < CHESSBOARD_LENGTH)
 	{
 		col  = 0;
-		while (col < 8)
+		while (col < CHESSBOARD_LENGTH)
 		{
 			_putchar(a[row][col]);
 			col++;
