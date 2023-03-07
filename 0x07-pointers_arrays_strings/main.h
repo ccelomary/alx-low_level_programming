@@ -10,4 +10,5 @@ char		*_strpbrk(char *, char *);
 char		*_strstr(char *, char *);
 void		print_chessboard(char (*)[]);
 void		print_diagsums(int *a, int size);
+void		_putchar(char c);
 #endif
