@@ -2,10 +2,10 @@
 /**
  * print_chessboard - print cheess board of 2 dimensions
  *
- * @board: 2 dimensions array of characters
+ * @a: 2 dimensions array of characters
  * Return: void
  */
-void	print_chessboard(char (*board)[8])
+void	print_chessboard(char (*a)[8])
 {
 	int	row;
 	int	col;
@@ -16,7 +16,7 @@ void	print_chessboard(char (*board)[8])
 		col  = 0;
 		while (col < 8)
 		{
-			_putchar(board[row][col]);
+			_putchar(a[row][col]);
 			col++;
 		}
 		_putchar('\n');
