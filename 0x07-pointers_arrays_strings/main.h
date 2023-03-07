@@ -2,8 +2,6 @@
 #define MAIN_H
 #include <stddef.h>
 #include <stdio.h>
-#define CHESSBOARD_LENGTH 8
-
 char	*_memset(char *, char, unsigned int);
 char	*_memcpy(char *, char *, unsigned int);
 char	*_strchr(char *, char);
