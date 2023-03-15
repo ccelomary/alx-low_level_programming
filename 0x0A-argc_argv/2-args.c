@@ -10,7 +10,7 @@ int	main(int argc, char *argv[])
 {
 	int	iter;
 
-	iter = 1;
+	iter = 0;
 	while (iter < argc)
 	{
 		printf("%s\n", argv[iter]);
