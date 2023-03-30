@@ -2,6 +2,7 @@
 #define LISTS_H
 #include <sys/types.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 /**
  * struct list_s - singly linked list
@@ -19,8 +20,6 @@ typedef struct	list_s
 } list_t;
 size_t	print_list(const list_t *h);
 size_t	list_len(const list_t *h);
-char	*_strcpy(char *dest, const char *src);
-size_t	_strlen(const char *s);
 list_t	*add_node_end(list_t **head, const char *str);
 list_t	*add_node(list_t **head, const char *string);
 void	free_list(list_t *head);

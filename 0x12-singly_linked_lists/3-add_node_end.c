@@ -1,5 +1,21 @@
 #include "lists.h"
+/**
+ * _strlen - function that return the length of given string
+ *
+ * @s: string to calcualte it's length
+ * Return: length of the string
+ */
+static size_t	_strlen(const char *s)
+{
+	size_t len;
 
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	return (len);
+}
 /**
  * add_node_end - function that adds node to end of the llist
  *
@@ -15,7 +31,7 @@ list_t	*add_node_end(list_t **head, const char *str)
 	size_t	slen;
 
 	slen = _strlen(str);
-	string = malloc(slen + 1);
+	string = strdup(str);
 	if (!string)
 		return (NULL);
 	current_node = malloc(sizeof(list_t));
@@ -25,7 +41,7 @@ list_t	*add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	current_node->len = slen;
-	current_node->str = _strcpy(string, str);
+	current_node->str = string;
 	current_node->next = NULL;
 	if (!*head)
 		*head = current_node;
