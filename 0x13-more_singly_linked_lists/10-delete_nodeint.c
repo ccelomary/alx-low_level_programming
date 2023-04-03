@@ -6,12 +6,11 @@
  * @index: the position of the node
  * Return: -1(error) or 1 (success)
  */
-
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t		*tmp;
-	listint_t		*before;
-	int				iter;
+	listint_t				*tmp;
+	listint_t				*before;
+	unsigned int			iter;
 
 	if (!*head)
 		return (-1);
