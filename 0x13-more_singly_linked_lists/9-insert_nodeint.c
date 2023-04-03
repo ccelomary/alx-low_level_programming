@@ -30,6 +30,11 @@ listint_t	*insert_at_index_helper(listint_t **head, listint_t *node,
 		before = tmp;
 		tmp = tmp->next;
 	}
+	if (index == idx)
+	{
+		before->next = node;
+		return (node);
+	}
 	return (NULL);
 }
 /**
@@ -45,6 +50,8 @@ listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t		*node;
 	listint_t		*tmp;
 
+	if (head == NULL)
+		return (NULL);
 	node = malloc(sizeof(listint_t));
 	if (!node)
 		return (NULL);
