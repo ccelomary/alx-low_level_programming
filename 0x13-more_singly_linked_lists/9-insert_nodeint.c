@@ -30,11 +30,6 @@ listint_t	*insert_at_index_helper(listint_t **head, listint_t *node,
 		before = tmp;
 		tmp = tmp->next;
 	}
-	if (index == idx)
-	{
-		before->next = node;
-		return (node);
-	}
 	return (NULL);
 }
 /**
@@ -60,7 +55,7 @@ listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = node;
 		return (node);
 	}
-	if (!*head && idx != 0)
+	if (!*head && idx > 0)
 	{
 		free(node);
 		return (NULL);
