@@ -74,6 +74,8 @@ listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (node);
 	}
 	tmp = insert_at_index_helper(head, node, idx);
+	if (tmp)
+		return (node);
 	if (!tmp)
 		free(node);
 	return (NULL);
