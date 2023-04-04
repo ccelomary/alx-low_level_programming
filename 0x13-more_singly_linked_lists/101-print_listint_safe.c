@@ -55,10 +55,10 @@ size_t		print_listint_safe(const listint_t *head)
 	{
 		if (iter == position)
 		{
-			printf("-> [%p] %d\n", head, head->n);
+			printf("-> [%p] %d\n", (void *)head, head->n);
 			exit(98);
 		}
-		printf("[%p] %d\n", head, head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		printed_len++;
 		iter++;
 		head = head->next;
