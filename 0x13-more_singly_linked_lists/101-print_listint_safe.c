@@ -1,5 +1,11 @@
 #include "lists.h"
 
+/**
+ * where_cycle_end - function that returns the position where the cycle occur
+ *
+ * @head: head linkedlist
+ * Return: position where cycle occur -1 if no cycle occur
+ */
 int			where_cycle_end(const listint_t *head)
 {
 	int			current_length;
@@ -40,7 +46,7 @@ size_t		print_listint_safe(const listint_t *head)
 {
 	int			iter;
 	size_t		printed_len;
-	int 		position;
+	int			position;
 
 	iter = 0;
 	printed_len = 0;
