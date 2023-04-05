@@ -44,7 +44,7 @@ size_t		free_listint_safe(listint_t **h)
 {
 	size_t		length;
 	int			iter, next_cycle;
-	listint_t	*tmp, *next;
+	listint_t	*tmp;
 
 	if (!h)
 		return (0);
