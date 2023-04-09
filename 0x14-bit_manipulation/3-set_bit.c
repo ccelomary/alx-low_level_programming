@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * set_bit - function that sets bit in given position for a number
  *
@@ -10,7 +11,7 @@ int		set_bit(unsigned long int *n, unsigned int index)
 	unsigned long int		mask;
 
 	mask  = 1 << index;
-	if (index > 32 || !n)
+	if (index > UNSINED_INT_LENGTH || !n)
 		return (-1);
 	*n = *n | mask;
 	return (1);
