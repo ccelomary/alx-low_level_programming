@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define UNSINED_INT_LENGTH 32
+#define UNSINED_INT_LENGTH 63
 #include <unistd.h>
 
 unsigned int	binary_to_uint(const char *b);
