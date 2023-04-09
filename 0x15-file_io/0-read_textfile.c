@@ -20,9 +20,9 @@ ssize_t		read_textfile(const char *filename, size_t letters)
 	close(fd);
 	if (number_of_read_letters == FILE_FAILURE)
 		return (0);
-	number_of_read_letters = write(STDOUT_FILENO, buffer,
-									MIN(letters, number_of_read_letters));
-	if (number_of_read_letters == FILE_FAILURE)
+	number_of_written_letters = write(STDOUT_FILENO, buffer,
+									MIN(letters, (size_t)number_of_read_letters));
+	if (number_of_written_letters == FILE_FAILURE)
 		return (0);
-	return (number_of_read_letters);
+	return (number_of_written_letters);
 }

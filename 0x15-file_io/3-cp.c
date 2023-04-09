@@ -57,6 +57,7 @@ int		copy(const int input_fd, const int output_fd, char *arguments[])
 	}
 	close_file(output_fd);
 	close_file(input_fd);
+	return (0);
 }
 
 /**
