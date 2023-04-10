@@ -33,6 +33,8 @@ int		create_file(const char *filename, char *text_content)
 	int			fd;
 	ssize_t		number_of_written_letters;
 
+	if (filename == NULL)
+		return (FAIL);
 	fd = open(filename, O_WRONLY | O_CREAT, USER_RW);
 	if (fd == FILE_FAILURE)
 		return (FAIL);
