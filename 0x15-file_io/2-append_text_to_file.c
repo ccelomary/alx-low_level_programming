@@ -32,7 +32,7 @@ int		append_text_to_file(const char *filename, char *text_content)
 	int			fd;
 	ssize_t		number_of_written_letters;
 
-	fd = open(filename, O_APPEND);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == FILE_FAILURE)
 		return (FAIL);
 	number_of_written_letters = write(fd, text_content,
