@@ -9,6 +9,8 @@ static size_t	_strlen(const char *s)
 {
 	size_t		len;
 
+	if (!s)
+		return (NULL);
 	len = 0;
 	while (*s)
 	{
