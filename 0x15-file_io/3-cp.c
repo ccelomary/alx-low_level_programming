@@ -43,7 +43,7 @@ int		copy(const int input_fd, const int output_fd, char *arguments[])
 			break;
 		if (read_letters == FILE_FAILURE)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", arguments[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arguments[1]);
 			close_file(output_fd);
 			close_file(input_fd);
 			return (FILE_DOES_NOT_EXIST);
@@ -79,7 +79,7 @@ int		main(int number_of_arguments, char *arguments[])
 	input_fd = open(arguments[1], O_RDONLY);
 	if (input_fd == FILE_FAILURE)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", arguments[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arguments[1]);
 		return (FILE_DOES_NOT_EXIST);
 	}
 	output_fd = open(arguments[2], O_WRONLY | O_CREAT | O_TRUNC, URW_GRW_OR);
