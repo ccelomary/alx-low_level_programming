@@ -4,7 +4,7 @@
 #define UNABLE_TO_WRITE 99
 #define UNABLE_TO_CLOSE_FILE 100
 #define BUFFER_SIZE 1024
-
+#define URW_GRW_OR 00644
 /**
  * close_file - function that close file and exit in case of error
  *
@@ -82,7 +82,7 @@ int		main(int number_of_arguments, char *arguments[])
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", arguments[1]);
 		return (FILE_DOES_NOT_EXIST);
 	}
-	output_fd = open(arguments[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
+	output_fd = open(arguments[2], O_WRONLY | O_CREAT | O_TRUNC, URW_GRW_OR);
 	if (output_fd == FILE_FAILURE)
 	{
 		dprintf(2, "Error: Can't write to %s\n", arguments[2]);
