@@ -82,7 +82,7 @@ int		main(int number_of_arguments, char *arguments[])
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", arguments[1]);
 		return (FILE_DOES_NOT_EXIST);
 	}
-	output_fd = open(arguments[2], O_WRONLY | O_CREAT, 00664);
+	output_fd = open(arguments[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (output_fd == FILE_FAILURE)
 	{
 		dprintf(2, "Error: Can't write to %s\n", arguments[2]);
