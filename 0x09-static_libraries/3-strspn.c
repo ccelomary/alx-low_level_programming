@@ -5,9 +5,9 @@
  * @set: set of character to search from
  * Return: true if c found in set else false
  */
-int	is_inset(char c, char *set)
+static int is_inset(char c, char *set)
 {
-	int	index;
+	int index;
 
 	index = 0;
 	while (set[index])
@@ -25,10 +25,10 @@ int	is_inset(char c, char *set)
  * @accept: the buffer containing the character to match
  * Return: length of sequence with longest matching character
  */
-unsigned int	_strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int	current;
-	int		index;
+	unsigned int current;
+	int index;
 
 	index = 0;
 	current = 0;
@@ -42,4 +42,3 @@ unsigned int	_strspn(char *s, char *accept)
 	}
 	return (current);
 }
-

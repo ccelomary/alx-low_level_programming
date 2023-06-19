@@ -1,0 +1,1 @@
+# DYNAMIC(shared) LIBRARY IN C

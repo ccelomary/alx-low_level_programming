@@ -6,9 +6,9 @@
  * @set: set of character to search from
  * Return: true if c found in set else false
  */
-int     is_inset(char c, char *set)
+static int is_inset(char c, char *set)
 {
-	int     index;
+	int index;
 
 	index = 0;
 	while (set[index])
@@ -26,9 +26,9 @@ int     is_inset(char c, char *set)
  * @accept: string to match with
  * Return: pointer to first occurence
  */
-char	*_strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	int	index;
+	int index;
 
 	index = 0;
 	while (s[index])
