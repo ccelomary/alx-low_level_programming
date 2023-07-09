@@ -1,45 +1,6 @@
 #include "hash_tables.h"
 
 /**
- * _strlen - function that calculates
- * the length of the given str
- *
- * @str: to calculate nex
- * Return: length
- */
-unsigned long int _strlen(const char *str)
-{
-	unsigned long int len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-/**
- * _strcpy - function that copies the src
- * into the dest
- *
- * @dest: destination which will recieve the data
- * @src: source of the data
- * Return: dest
- */
-char *_strcpy(char *dest, const char *src)
-{
-	unsigned long int iter;
-
-	iter = 0;
-	while (src[iter])
-	{
-		dest[iter] = src[iter];
-		iter++;
-	}
-	dest[iter] = 0;
-	return (dest);
-}
-
-/**
  * add_to_begging - function that adds
  * new nodes at the beggining of the linkedlist
  *
@@ -56,21 +17,21 @@ hash_node_t *add_to_begging(hash_node_t **backet,
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (NULL);
-	node->key = malloc(sizeof(char) * (_strlen(key) + 1));
+	node->key = malloc(sizeof(char) * (strlen(key) + 1));
 	if (!node->key)
 	{
 		free(node);
 		return (NULL);
 	}
-	node->value = malloc(sizeof(char) * (_strlen(value) + 1));
+	node->value = malloc(sizeof(char) * (strlen(value) + 1));
 	if (!node->value)
 	{
 		free(node->key);
 		free(node);
 		return (NULL);
 	}
-	_strcpy(node->key, key);
-	_strcpy(node->value, value);
+	strcpy(node->key, key);
+	strcpy(node->value, value);
 	node->next = *backet;
 	*backet = node;
 	return (node);
@@ -100,11 +61,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(tmp->key, key))
 		{
-			val = malloc(sizeof(char) * (_strlen(value) + 1));
+			val = malloc(sizeof(char) * (strlen(value) + 1));
 			if (!val)
 				return (0);
 			free(tmp->value);
-			_strcpy(val, value);
+			strcpy(val, value);
 			tmp->value = val;
 			return (1);
 		}
