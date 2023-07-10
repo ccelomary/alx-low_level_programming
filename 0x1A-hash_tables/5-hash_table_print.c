@@ -21,10 +21,10 @@ void hash_table_print(const hash_table_t *ht)
 	while (iterator < ht->size)
 	{
 		node = ht->array[iterator];
-		if (node && is_printed && iterator + 1 < ht->size)
-			printf(", ");
 		while (node)
 		{
+			if (is_printed)
+				printf(", ");
 			printf("'%s': '%s'", node->key, node->value);
 			node = node->next;
 			is_printed = 1;
