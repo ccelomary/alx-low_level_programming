@@ -24,7 +24,7 @@ hash_node_t *add_to_begging(hash_node_t **backet,
 		return (NULL);
 	}
 	node->value = malloc(sizeof(char) * (strlen(value) + 1));
-	if (!node->value)
+	if (value && !node->value)
 	{
 		free(node->key);
 		free(node);
@@ -54,7 +54,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *tmp;
 	char *val;
 
-	if (!key || *key == '\0')
+	if (!key || *key == '\0' || !ht || !value)
 		return (0);
 	index = key_index((unsigned const char *)key, ht->size);
 	tmp = ht->array[index];
@@ -62,11 +62,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(tmp->key, key))
 		{
-			val = malloc(sizeof(char) * (strlen(value) + 1));
+			val = strdup(value);
 			if (!val)
 				return (0);
 			free(tmp->value);
-			strcpy(val, value);
 			tmp->value = val;
 			return (1);
 		}
