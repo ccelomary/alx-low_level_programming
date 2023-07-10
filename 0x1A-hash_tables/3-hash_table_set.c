@@ -51,14 +51,13 @@ hash_node_t *add_to_begging(hash_node_t **backet,
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t **backet, *tmp;
+	hash_node_t *tmp;
 	char *val;
 
-	if (!key)
+	if (!key || *key == '\0')
 		return (0);
 	index = key_index((unsigned const char *)key, ht->size);
-	backet = &ht->array[index];
-	tmp = *backet;
+	tmp = ht->array[index];
 	while (tmp)
 	{
 		if (!strcmp(tmp->key, key))
@@ -73,5 +72,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->next;
 	}
-	return ((add_to_begging(backet, key, value)) ? 1 : 0);
+	return ((add_to_begging(&ht->array[index], key, value)) ? 1 : 0);
 }

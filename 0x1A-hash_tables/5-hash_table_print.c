@@ -15,6 +15,8 @@ void hash_table_print(const hash_table_t *ht)
 
 	iterator = 0;
 	is_printed = 0;
+	if (!ht)
+		return;
 	printf("{");
 	while (iterator < ht->size)
 	{
